@@ -7,7 +7,7 @@ class BlaTest {
 
     @Test
     fun firstTest() {
-        assertThat(message()).isEqualTo("★ Welcome to Bla ★")
+        assertThat(message()).isEqualTo("💎 Welcome to Bla 💎")
     }
 
     @Test

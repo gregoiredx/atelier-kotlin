@@ -1,7 +1,7 @@
 package bla
 
 fun main(args: Array<String>) {
-    print(message())
+    println(message())
 }
 
-fun message() = "★ Welcome to Bla ★"
+fun message() = "💎 Welcome to Bla 💎"

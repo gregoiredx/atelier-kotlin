@@ -14,7 +14,7 @@ apply plugin: "kotlin" // or apply plugin: "kotlin2js" if targeting JavaScript
 apply plugin: "application"
 
 defaultTasks "run"
-mainClassName = 'BlaKt'
+mainClassName = 'bla.BlaKt'
 
 repositories {
     mavenCentral()
@@ -26,4 +26,15 @@ dependencies {
     testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
     testCompile "junit:junit:4.12"
     testCompile "org.assertj:assertj-core:3.6.2"
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+
+    // This line of code recursively collects and copies all of a project's files
+    // and adds them to the JAR itself. One can extend this task, to skip certain
+    // files or particular types at will
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
