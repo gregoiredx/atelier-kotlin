@@ -6,4 +6,5 @@
 
 ## run main without gradle
  ./gradlew jar
+ 
  java -jar build/libs/atelier-kotlin.jar
